@@ -1,0 +1,77 @@
+
+# Health Connect 
+
+This is a React-based web application for browsing doctors by specialty and making appointments. Each specialty has its own page (Dentists, Cardiologists, Ophthalmologists, Pediatrics, Dermatologists) and displays a mini-calendar for scheduling.
+
+## Features
+
+* Browse doctors by specialty or by filter (**the filter isn't fully working yet )
+* View doctor information (name, specialty, address, photo)
+* Make an appointment (button linked to calendar)
+* Mini calendar for each doctor
+* Responsive design with a consistent header across pages
+* **Google Full Calendar integration**: currently displays a basic calendar; in the next version, it will be fully adjustable and show available time slots for each doctor.
+
+## Getting Started
+
+Follow these steps to run the project locally on your computer.
+
+### 1. Extract the project
+
+* Unzip the project folder to a location on your computer.
+
+### 2. Install dependencies
+
+Make sure you have [Node.js](https://nodejs.org/) installed. Open a terminal inside the project folder and run:
+
+```bash
+npm install
+```
+
+### 3. Start the local backend (JSON Server)
+
+The project uses `json-server` to simulate a backend API with the local `db.json` file. Run this command in the terminal inside the project folder:
+
+```bash
+json-server --watch db.json --port 5000
+```
+
+* This will start a local API server at `http://localhost:5000`.
+* Each specialty has its own endpoint:
+
+  * `/dentists`
+  * `/cardiologists`
+  * `/ophthalmologists`
+  * `/pediatricians`
+  * `/dermatologists`
+
+> ⚠ Make sure the JSON Server is running **before** starting the frontend, otherwise doctor data will not load.
+
+### 4. Start the frontend
+
+In a **new terminal window** inside the project folder, run:
+
+```bash
+npm run dev
+```
+
+* This will start the React development server.
+* Open your browser and go to the displayed URL (usually `http://localhost:5173`) to view the app.
+
+### 5. Navigate through specialties
+
+* Use the navigation links or URLs to visit each specialty page:
+
+  * `/dentists`
+  * `/cardiology`
+  * `/ophthalmology`
+  * `/pediatrics`
+  * `/dermatology`
+
+
+ Notes
+* Adding more doctors to `db.json` will automatically update the app.
+* The **mini calendar currently shows basic dates**, but the next version will be enhanced to show **available appointment slots for each doctor** using the Google Full Calendar API.
+* Ensure that both the JSON Server and frontend server are running simultaneously for full functionality.
+
+

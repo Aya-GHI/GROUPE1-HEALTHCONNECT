@@ -1,0 +1,104 @@
+/* HEADER MAIN STYLE */
+.header {
+  background-color: #FFD8B0;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  height: 90px; /* height normal */
+}
+
+/* CONTENT CENTERED */
+.header-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 60px;
+}
+
+/* LOGO + TEXT */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.logo-image {
+  height: 150px;  /* 🔥 PERFECT SIZE */
+  width: auto;
+}
+
+.logo-text {
+  color: #ffffff;
+  font-size: 1.8rem;
+  font-weight: bold;
+}
+
+/* LINKS ON RIGHT SIDE */
+.header-links {
+  display: flex;
+  align-items: center;
+  gap: 35px; /* 🔥 spacing between links */
+}
+
+/* NORMAL LINKS */
+.header-link {
+  text-decoration: none;
+  color: #ffffff;
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.3s;
+  white-space: nowrap;
+}
+
+.header-link:hover {
+  color: #ff9e20;
+}
+
+/* BUTTONS (LOGIN / CREATE ACCOUNT / DOCTOR BUTTON) */
+.login-btn, 
+.create-account-btn,
+.doctor-btn {
+  background-color: #ff9e20;
+  color: white;
+  border: none;
+  padding: 10px 22px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: 0.3s;
+  white-space: nowrap;
+}
+
+.login-btn:hover,
+.create-account-btn:hover,
+.doctor-btn:hover {
+  background-color: #e68900;
+  transform: translateY(-1px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .header-top {
+    flex-direction: column;
+    gap: 15px;
+    padding: 15px;
+  }
+
+  .header-links {
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .logo-text {
+    font-size: 1.5rem;
+  }
+}

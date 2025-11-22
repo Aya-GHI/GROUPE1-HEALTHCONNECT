@@ -1,0 +1,47 @@
+.mini-calendar {
+  width: 200px;
+  padding: 15px;
+  border-left: 1px solid #e5e5e5;
+  font-family: "Inter", sans-serif;
+}
+
+.calendar-header {
+  display: flex;
+  justify-content: space-between;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.calendar-header button {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.weekday-row {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  font-size: 12px;
+  margin-bottom: 8px;
+  opacity: 0.7;
+  text-align: center;
+}
+
+.days-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 4px;
+  text-align: center;
+}
+
+.days-grid div {
+  padding: 5px 0;
+  border-radius: 50%;
+}
+
+.days-grid .today {
+  background-color: #f7a530;
+  color: white;
+  font-weight: bold;
+}
