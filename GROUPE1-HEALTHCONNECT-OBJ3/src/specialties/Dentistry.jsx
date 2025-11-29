@@ -7,7 +7,7 @@ export default function Dentists() {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/dentists")
+    fetch("http://localhost:5000/api/dentists")
       .then(res => res.json())
       .then(data => setDoctors(data))
       .catch(err => console.error("Fetch error:", err));

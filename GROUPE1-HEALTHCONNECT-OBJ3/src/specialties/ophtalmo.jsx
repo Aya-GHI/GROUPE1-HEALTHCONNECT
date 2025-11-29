@@ -7,7 +7,7 @@ export default function ophtalmo() {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/ophthalmology")
+      fetch("http://localhost:5000/api/ophthalmology")
       .then(res => res.json())
       .then(data => setDoctors(data))
       .catch(err => console.error("Fetch error:", err));

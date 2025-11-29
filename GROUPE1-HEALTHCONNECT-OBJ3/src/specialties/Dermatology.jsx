@@ -8,7 +8,7 @@ export default function Dermatology() {
   const [doctors, setDoctors] = useState([]);
 
   useEffect(() => {
-    fetch("http://localhost:5000/dermatology") 
+    fetch("http://localhost:5000/api/dermatology") 
       .then(res => res.json())
       .then(data => setDoctors(data))
       .catch(err => console.error("Fetch error:", err));
