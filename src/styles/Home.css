@@ -1,0 +1,131 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.home {
+  background-color: #fffaf5;
+}
+
+/* Navbar */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 60px;
+}
+
+.logo {
+  font-weight: bold;
+  color: #f4a261;
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-size: 14px;
+}
+
+.doctor-btn {
+  background-color: #f4a261;
+  border: none;
+  padding: 8px 14px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Hero */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px;
+  background-color: #fde7d3;
+}
+
+.hero-text {
+  max-width: 50%;
+}
+
+.hero-text h1 {
+  font-size: 42px;
+  font-weight: 700;
+  color: #1d1d1d;
+}
+
+.hero-text p {
+  margin-top: 20px;
+  color: #555;
+  line-height: 1.6;
+}
+
+.hero-image img {
+  width: 500px;
+  
+}
+
+
+/* Search Bar */
+.search-bar {
+  margin: -30px auto 50px;
+  width: 60%;
+  background-color: white;
+  padding: 15px;
+  border-radius: 30px;
+  display: flex;
+  gap: 10px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.search-bar input {
+  flex: 1;
+  border: none;
+  outline: none;
+  padding: 10px;
+}
+
+.search-bar button {
+  background-color: #f4a261;
+  border: none;
+  padding: 10px 25px;
+  border-radius: 20px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Specialties */
+.specialties {
+  text-align: center;
+  padding: 40px 0;
+}
+
+.specialties h2 {
+  margin-bottom: 30px;
+}
+
+.specialty-list {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+}
+
+.specialty-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #fde7d3;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.specialty-item p {
+  margin-top: 8px;
+  font-size: 12px;
+}

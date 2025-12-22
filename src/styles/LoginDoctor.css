@@ -1,0 +1,71 @@
+.login-doctor-page {
+  display: flex;
+  justify-content: center;
+  padding: 60px 0;
+  background-color: #fff6ed;
+}
+
+.login-card {
+  width: 360px;
+  background-color: #fff2e6;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.login-card h2 {
+  text-align: center;
+  color: #ff8c42;
+  margin-bottom: 30px;
+}
+
+.form-section {
+  margin-bottom: 25px;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.login-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.forgot-password {
+  color: #ff8c42;
+  cursor: pointer;
+}
+
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ff9f50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.register-link {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.register-link span {
+  color: #ff8c42;
+  font-weight: bold;
+  cursor: pointer;
+}

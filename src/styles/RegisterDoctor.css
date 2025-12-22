@@ -1,0 +1,71 @@
+.register-doctor-page {
+  display: flex;
+  justify-content: center;
+  padding: 40px 0;
+  background-color: #fff6ed;
+}
+
+.register-card {
+  width: 380px;
+  background-color: #fff2e6;
+  padding: 30px;
+  border-radius: 16px;
+}
+
+.register-card h2 {
+  text-align: center;
+  color: #ff8c42;
+  margin-bottom: 30px;
+}
+
+.form-section {
+  margin-bottom: 30px;
+}
+
+.form-section h4 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  border: 1px solid #ddd;
+  outline: none;
+}
+
+.terms {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13px;
+  margin-bottom: 20px;
+}
+
+.register-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  background-color: #ff9f50;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+}
+.login-link {
+  text-align: center;
+  font-size: 13px;
+  margin-top: 15px;
+}
+
+.login-link a {
+  color: #ff8c42;
+  font-weight: bold;
+  text-decoration: none;
+}
