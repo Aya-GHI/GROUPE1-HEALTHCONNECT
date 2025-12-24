@@ -1,6 +1,6 @@
 // Cardio.jsx (example for Cardiology)
 import React, { useEffect, useState } from "react";
-import Header from "../header"; // adjust path if needed
+// adjust path if needed
 import MiniCalendar from "../calendar/MiniCalendar";
 import "./specialties.css";
 
@@ -16,8 +16,7 @@ export default function Dermatology() {
 
   return (
     <div className="page-container">
-      <Header />
-
+     
       <h1 className="title">Dermatologists</h1>
 
       {doctors.length === 0 ? (

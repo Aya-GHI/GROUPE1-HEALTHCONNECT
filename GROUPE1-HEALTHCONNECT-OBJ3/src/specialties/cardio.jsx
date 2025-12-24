@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../header"; 
+
 import MiniCalendar from "../calendar/MiniCalendar";
 import "./specialties.css";
 
@@ -15,8 +15,7 @@ export default function Cardio() {
 
   return (
     <div className="page-container">
-      <Header />
-
+     
       <h1 className="title">Cardiologists</h1>
 
       {doctors.length === 0 ? (

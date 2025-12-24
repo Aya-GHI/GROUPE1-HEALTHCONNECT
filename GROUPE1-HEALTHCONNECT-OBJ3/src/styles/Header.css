@@ -25,7 +25,9 @@
 .logo-container {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 10px;
+   text-decoration: none;
+  cursor: pointer;
 }
 
 .logo-image {
@@ -34,11 +36,15 @@
 }
 
 .logo-text {
+  color: #f4a261;
+}
+
+
+.logo-text {
   color: #ffffff;
   font-size: 1.8rem;
   font-weight: bold;
 }
-
 /* LINKS ON RIGHT SIDE */
 .header-links {
   display: flex;
@@ -62,8 +68,7 @@
 
 /* BUTTONS (LOGIN / CREATE ACCOUNT / DOCTOR BUTTON) */
 .login-btn, 
-.create-account-btn,
-.doctor-btn {
+.create-account-btn {
   background-color: #ff9e20;
   color: white;
   border: none;
@@ -102,3 +107,21 @@
     font-size: 1.5rem;
   }
 }
+.doctor-btn {
+  background-color: #ffa84d;
+  color: white;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: 0.3s;
+  font-size: 0.9rem;
+  white-space: nowrap;
+}
+
+.doctor-btn:hover {
+  background-color: #ff9a2e;
+}
+.logo-text {
+    font-size: 1.5rem;
+  }

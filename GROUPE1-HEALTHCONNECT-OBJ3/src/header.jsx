@@ -1,29 +1,41 @@
 import React from "react";
-import { Link } from "react-router-dom"; // <-- import Link from react-router-dom
+import { Link, useNavigate } from "react-router-dom";
 import logo from "./assets/logo.png";
-import { useNavigate } from "react-router-dom";
-
+import "./styles/Header.css";
 
 export default function Header() {
-      const navigate = useNavigate();
+  const navigate = useNavigate();
 
   return (
     <header className="header">
-      <div className="header-logo">
-        {/* Wrap both logo and text in Link */}
-        <Link to="/" style={{ display: "flex", alignItems: "center", textDecoration: "none", color: "inherit" }}>
-          <img src={logo} alt="logo" style={{ marginRight: "8px" }} />
-          <h1>HealthConnect</h1>
-        </Link>
-      </div>
-      <div className="header-menu">
-        <button>ARE YOU A DOCTOR?</button>
-        <a href="#">HELP CENTER</a>
-        <nav>
-            <button className="login-btn" onClick={() => navigate("/login")}>
+      <div className="header-top">
+
+        {/* LOGO */}
+        <div className="logo-container">
+          <Link
+            to="/"
+            style={{ display: "flex", alignItems: "center", textDecoration: "none" }}
+          >
+            <img src={logo} alt="logo" className="logo-image" />
+            <span className="logo-text">HealthConnect</span>
+          </Link>
+        </div>
+
+        {/* LINKS */}
+        <div className="header-links">
+          <Link to="/register-doctor" className="doctor-btn">
+            ARE YOU A DOCTOR?
+          </Link>
+
+          <Link to="/help" className="header-link">
+            HELP CENTER
+          </Link>
+
+          <button className="login-btn" onClick={() => navigate("/login")}>
             Login
-            </button>
-        </nav>
+          </button>
+        </div>
+
       </div>
     </header>
   );

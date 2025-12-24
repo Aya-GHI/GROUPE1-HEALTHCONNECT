@@ -1,12 +1,21 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Routes, Route, useNavigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  useNavigate,
+} from "react-router-dom";
 import axios from "axios";
 import "./App.css";
+
 import Login from "./authentification/Login";
 import Register from "./authentification/Register.jsx";
+import RegisterDoctor from "./authentification/RegisterDoctor";
+import LoginDoctor from "./authentification/LoginDoctor";
 
 
 import doctorsImg from "./assets/doc.png";
+
 import Dentists from "./specialties/Dentistry";
 import Cardiology from "./specialties/cardio";
 import Ophthalmology from "./specialties/ophtalmo";
@@ -15,7 +24,7 @@ import Pediatrics from "./specialties/Pediatrics";
 
 import Header from "./header";
 
-// ======= SPECIALTIES COMPONENT =======
+// ======= SPECIALTIES =======
 function Specialties() {
   const navigate = useNavigate();
 
@@ -34,13 +43,10 @@ function Specialties() {
         {specialties.map((item, idx) => (
           <button
             key={idx}
-            type="button"
             className="specialty-item"
-            onClick={() => item.route && navigate(item.route)}
+            onClick={() => navigate(item.route)}
           >
-            <div className="specialty-icon">
-              <span className="material-symbols-outlined">{item.icon}</span>
-            </div>
+            <span className="material-symbols-outlined">{item.icon}</span>
             <p>{item.label}</p>
           </button>
         ))}
@@ -49,7 +55,7 @@ function Specialties() {
   );
 }
 
-// ======= SEARCH BAR COMPONENT =======
+// ======= SEARCH BAR =======
 function SearchBar() {
   const [name, setName] = useState("");
   const [location, setLocation] = useState("");
@@ -61,26 +67,22 @@ function SearchBar() {
       if (name) url += `name_like=${name}&`;
       if (location) url += `location_like=${location}&`;
 
-      const response = await axios.get(url);
-      setResults(response.data);
-    } catch (error) {
-      console.error(error);
+      const res = await axios.get(url);
+      setResults(res.data);
+    } catch (err) {
+      console.error(err);
     }
   };
 
   return (
     <div className="search-bar-container">
       <div className="search-bar">
-        <span className="material-symbols-outlined">search</span>
         <input
-          type="text"
           placeholder="Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
         />
-        <span className="material-symbols-outlined">location_on</span>
         <input
-          type="text"
           placeholder="Location"
           value={location}
           onChange={(e) => setLocation(e.target.value)}
@@ -89,12 +91,10 @@ function SearchBar() {
       </div>
 
       <div className="search-results">
-        {results.map((doctor) => (
-          <div key={doctor.id} className="doctor-card">
-            <h4>{doctor.name}</h4>
-            <p>
-              {doctor.specialty} — {doctor.location}
-            </p>
+        {results.map((doc) => (
+          <div key={doc.id} className="doctor-card">
+            <h4>{doc.name}</h4>
+            <p>{doc.specialty} — {doc.location}</p>
           </div>
         ))}
       </div>
@@ -102,22 +102,17 @@ function SearchBar() {
   );
 }
 
-// ======= HOME PAGE CONTENT =======
+// ======= HOME PAGE =======
 function AppContent() {
   return (
     <div className="app">
-      <Header />
-
-      {/* HERO SECTION */}
       <section className="hero">
         <div className="hero-content">
           <div className="hero-text">
             <h1>Connecting you to trusted doctors —</h1>
             <h3>anytime, anywhere!</h3>
             <p>
-              HealthConnect helps you reach verified medical professionals,
-              explore their specialties, and access personalized healthcare
-              services from the comfort of your home.
+              HealthConnect helps you reach verified medical professionals.
             </p>
           </div>
           <div className="hero-image">
@@ -126,29 +121,36 @@ function AppContent() {
         </div>
       </section>
 
-      {/* SEARCH BAR */}
       <SearchBar />
-
-      {/* SPECIALTIES */}
       <Specialties />
     </div>
   );
 }
 
-// ======= ROOT APP WITH ROUTING =======
+// ======= ROOT =======
 export default function App() {
   return (
     <Router>
-      <Routes>
-        <Route path="/" element={<AppContent />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/register" element={<Register />} /> 
-        <Route path="/dentists" element={<Dentists />} />
-        <Route path="/cardio" element={<Cardiology />} />
-        <Route path="/dermatology" element={<Dermatology />} />
-        <Route path="/pediatrics" element={<Pediatrics />} />
-        <Route path="/ophthalmology" element={<Ophthalmology />} />
-      </Routes>
+      <div className="app">
+        <Header />
+
+        <main style={{ flex: 1 }}>
+          <Routes>
+            <Route path="/" element={<AppContent />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/register-doctor" element={<RegisterDoctor />} />
+            <Route path="/doctor-login" element={<LoginDoctor />} />
+
+            <Route path="/dentists" element={<Dentists />} />
+            <Route path="/cardio" element={<Cardiology />} />
+            <Route path="/dermatology" element={<Dermatology />} />
+            <Route path="/pediatrics" element={<Pediatrics />} />
+            <Route path="/ophthalmology" element={<Ophthalmology />} />
+          </Routes>
+        </main>
+      </div>
     </Router>
   );
 }
+

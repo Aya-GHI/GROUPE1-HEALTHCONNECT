@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import Header from "../header"; 
+
 import MiniCalendar from "../calendar/MiniCalendar";
 import "./specialties.css";
 
@@ -16,7 +16,7 @@ export default function Dentists() {
   return (
     <div className="page-container">
       {/* Render the Header at the top */}
-      <Header />
+      
 
       <h1 className="title">Dentists</h1>
 
